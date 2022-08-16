@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demo</title>
+    <style>
+        table td {
+            padding: 12px;
+            width: 50%;
+            font-size: 17px;
+            font-family: monospace;
+        }
+
+        table input[type="text"],
+        table input[type="email"],
+        table select,
+        input#search {
+            width: 95%;
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+            background: #efefef;
+            padding: 6px;
+        }
+
+        table select {
+            background: #974a4a21;
+            border-radius: 6px;
+            width: 100%;
+            padding: 6px;
+            height: 40px;
+        }
+
+        input[type="submit"] {
+            width: 100px;
+            height: 40px;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            background: rgb(110, 2, 2);
+            color: white;
+        }
+
+        table {
+            border: 1px solid #00000026;
+        }
+
+        input[type="radio"] {
+            width: 15px;
+            height: 15px;
+            margin: 0 6px 0 0;
+        }
+
+        tr {}
+
+        input[type="search"] {
+            width: 200px !important;
+        }
+        
+        input#search {
+            width: 280px;
+            height: 50px;
+            padding: 0 6px;
+        }
+
+        button#searchbtn {
+            width: 110px;
+            height: 50px;
+            border: none;
+            font-size: 16px;
+            border-radius: 10px;
+            background: rgb(131, 4, 4);
+            color: rgb(238, 241, 245);
+            margin-left: 10px;
+        }
+
+        select#dropDownSort {
+            height: 30px;
+            margin-top: 5px;
+        }
+
+        th {
+            padding: 8px;
+            font-size: 17px;
+            font-family: monospace;
+        }
+
+        button {
+            width: 60px;
+            height: 30px;
+            background: rgb(140, 4, 4);
+            color: white;
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+
+<body onload="addTable()">
+    <form id="form" onsubmit="event.preventDefault();validation()" action="">
+        <table border="1" width="auto" height="auto" cellspacing="0" cellpadding="3">
+            <tr>
+                <td>Name:</td>
+                <td><input type="text"><span></span></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email"><span></span></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <input type="radio" name="gender" value="Male">Male
+                    <input type="radio" name="gender" value="Female">Female
+                    <span></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Hobby:</td>
+                <td>
+                    <input type="checkbox" name="messageCheckbox" value="Traveling">Traveling
+                    <input type="checkbox" name="messageCheckbox" value="Sport">Sport
+                    <input type="checkbox" name="messageCheckbox" value="Reading">Reading
+                    <span></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Country:</td>
+                <td>
+                    <select value="country" name="country" id="country">
+                        <option value="-">Select</option>
+                    </select>
+                    <span></span>
+                </td>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td>
+                    <select value="state" id="state">
+                        <option value="-">Select</option>
+                    </select>
+                    <span></span>
+                </td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td>
+                    <select value="city" id="city" name="city">
+                        <option value="-">Select</option>
+                    </select>
+                    <span></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Action</td>
+                <td name="save">
+                    <input type="submit" value="Save"><span></span>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br>
+    <br>
+    <input type="text" id="search">&nbsp;<button onclick="searchName()">Search</button>
+    <br><br>
+    <br><br>
+    <table id="details" border="1" cellspacing="0" cellpadding="1">
+        <thead>
+            <tr>
+                <th>Name<div>
+                        <select id="dropDownSort">
+                            <option value="-">Select</option>
+                            <option value="ascending">Ascending</option>
+                            <option value="descending">Descending</option>
+                        </select>
+                    </div>
+                </th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Hobby</th>
+                <th>Country</th>
+                <th>State</th>
+                <th>City</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+    <br>
+    <script src="table.js"></script>
+    <script src="country_state_city.js"></script>
+    <script src="country_city_dropdown.js"></script>
+    <script src="validtion.js"></script>
+    <script src="form.js"></script>
+</body>
+
+</html>
